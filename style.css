@@ -1,0 +1,374 @@
+/* ============ VARIABLES ============ */
+:root{
+    --bg-color: hsl(0, 0%, 93%);
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 7%);
+    --shadow: hsl(0, 0%, 84%);
+
+
+    --ff-main: 'DM Sans', sans-serif;
+    
+    --fs-s: 0.7rem;
+    --fs-m: 1rem;
+    --fs-l: 1.6rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 2.5rem;
+    --fs-xxxl: 3rem;
+    
+    --ls-s: -0.1rem;
+
+    --fw-normal: 400;
+    --fw-bold: 500;
+
+    --spacing-s: 1.2rem;
+    --spacing-m: 2rem;
+    --spacing-l: 2.8rem;
+
+    --border-radius-card: 0.5rem;
+    --border-radius-button: 2rem;
+
+
+}    
+
+/* ============ STYLES ============ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1;
+
+}
+
+body {
+    font-family: var(--ff-main);
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    color: var(--black);
+    background-color: var(--bg-color);
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1, h2 {
+    letter-spacing: var(--ls-s);
+    font-weight: var(--fw-bold);
+}
+
+h2 {
+    font-size: clamp(var(--fs-l), 3.2vw, var(--fs-xxl));
+    font-weight: 600;
+}
+
+/* ============ MOBILE FIRST ============ */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1.5em;
+    padding: 1em;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1em;
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* ============ CARD 1 ============ */
+.card.five-stars{
+    background-color: var(--purple-500);
+    color: var(--white);
+    width: 100%;
+    padding: var(--spacing-l);
+}
+
+.card.five-stars h1{
+    font-size: clamp(var(--fs-xxl), 5vw, 4rem) !important;
+    font-weight: var(--fw-bold);
+    text-align: center;
+}
+
+.card.five-stars h1 span:first-of-type{
+    color: var(--yellow-500);
+}
+
+.card.five-stars h1 span:last-of-type {
+    font-style: italic;
+}
+
+.card.five-stars p{
+    text-align: center;
+    font-size: clamp(var(--fs-m), 2vw, 1.2rem);
+
+}
+
+.card.five-stars img {
+    max-width: 60%;
+    justify-self: center;
+}
+
+@media screen and (min-width: 768px) {
+    .five-stars {
+       grid-area: five-stars;
+           align-content: center;
+
+    }
+    .five-stars img {
+        max-width: 40% !important;
+    }
+}
+
+/* ============ CARD 2 ============ */
+.card.multiple-platforms {
+    background-color: var(--white);
+    padding: var(--spacing-s);
+}
+
+.card.multiple-platforms img {
+    filter: drop-shadow(0.5em 0.5em 1em var(--shadow));
+}
+
+@media screen and (min-width: 768px) {
+    .multiple-platforms {
+        grid-area: multiple-platforms;
+    }
+    .multiple-platforms img {
+        max-width: 150%;
+    }
+}
+
+/* ============ CARD 3 ============ */
+.card.consistent-schedule {
+    background-color: var(--yellow-500);
+    padding: var(--spacing-s) var(--spacing-s) 0 var(--spacing-s);
+    overflow: hidden;
+}
+
+.card.consistent-schedule img{
+    max-width: 70%;
+}
+
+@media screen and (min-width: 768px) {
+    .consistent-schedule {
+        grid-area: consistent-schedule;
+    }
+    .consistent-schedule img {
+        max-width: 100% !important;
+        transform: translateY(0) !important;
+    }
+}
+
+
+/* ============ CARD 4 ============ */
+.card.schedule-posts {
+    background-color: var(--purple-100);
+    padding: var(--spacing-m) var(--spacing-s);
+}
+
+.card.schedule-posts h2, .card.schedule-posts p  {
+    text-align: center;
+}
+
+.card.schedule-posts p {
+    font-size: clamp(1.2rem, 2rem, var(--fs-l));
+}
+
+@media screen and (min-width: 768px) {
+    .schedule-posts {
+        grid-area: schedule-posts;
+    }
+    .schedule-posts h2, .schedule-posts p {
+        text-align: left !important;
+    }
+
+    .schedule-posts img{
+        max-width: 150%;
+    }
+}
+
+/* ============ CARD 5 ============ */
+.card.grow-followers {
+    background-color: var(--purple-500);
+    padding: var(--spacing-s) var(--spacing-l);
+}
+
+.card.grow-followers img{
+    max-width: 90%;
+    justify-self: center;
+    padding-bottom: var(--spacing-s);
+}
+.card.grow-followers h2{
+    color: var(--white);
+    text-align: center;
+    font-weight: var(--fw-bold);
+    font-size: clamp(var(--fs-xl), 5vw, var(--fs-xxl));
+}
+
+@media screen and (min-width: 768px) {
+    .grow-followers {
+        grid-area: grow-followers;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    .grow-followers h2 {
+    text-align: left !important;
+    }
+    .grow-followers img {
+    max-width: 100% !important;
+    padding: 0 !important;
+    }
+}
+
+/* ============ CARD 6 ============ */
+.card.audience-growth {
+    background-color: var(--white);
+    padding: var(--spacing-s);
+}
+
+.card.audience-growth div:first-of-type{
+    font-size: clamp(var(--fs-xxxl), 5vw, 4rem);
+    font-weight: var(--fw-bold);
+}
+
+.card.audience-growth h2{
+    font-size: clamp(1.3rem, 2vw, var(--fs-l));
+    font-weight: var(--fw-normal);
+}
+
+.card.audience-growth img{
+    max-width: 60%;
+}
+
+@media screen and (min-width: 768px) {
+    .audience-growth {
+        grid-area: audience-growth;
+    }
+    .audience-growth h2{
+        letter-spacing: var(--ls-s);
+        line-height: 4rem;
+    }
+    .audience-growth img{
+        max-width: 80% !important;
+    }
+}
+
+/* ============ CARD 7 ============ */
+.card.create-post {
+    background-color: var(--yellow-100);
+    padding: var(--spacing-s);
+}
+
+.card.create-post h2{
+    font-size: clamp(var(--fs-xl), 3vw, var(--fs-xxxl));
+}
+
+.card.create-post h2 span{
+    color: var(--purple-500);
+    font-style: italic;
+}
+
+.card.create-post img{
+    max-width: 65%;
+}
+
+@media screen and (min-width: 768px) {
+    .create-post {
+        grid-area: create-post;
+        align-content: center;
+    }
+    .create-post img {
+        max-width: 90% !important;
+    }
+}
+
+/* ============ CARD 8 ============ */
+.card.ai-content {
+    background-color: var(--yellow-500);
+    padding: var(--spacing-s);
+}
+
+.card.ai-content h2{
+    font-size: clamp(var(--fs-xl), 5vw, var(--fs-xxxl));
+
+}
+
+.card.ai-content img{
+    max-width: 70%;
+}
+
+@media screen and (min-width: 768px) {
+    .ai-content {
+        grid-area: ai-content;
+    }
+    .ai-content img{
+        max-width: 100% !important;
+    }
+
+}
+  
+.attribution { font-size: var(--fs-s); text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* ============ RESPONSIVE TABLET - General ============ */
+@media screen and (min-width: 768px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        'five-stars five-stars'
+        'multiple-platforms consistent-schedule'
+        'create-post schedule-posts'
+        'ai-content schedule-posts'
+        'ai-content audience-growth'
+        'grow-followers grow-followers';
+    }
+}
+
+
+/* ============ RESPONSIVE DESKTOP - General ============ */
+@media screen and (min-width: 1024px) {
+    body{
+        height: 100vh;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-weight: var(--fw-bold);
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 40% 10% 20% 30%;
+        grid-template-areas: 
+        'create-post five-stars five-stars schedule-posts'
+        'create-post multiple-platforms consistent-schedule schedule-posts'
+        'ai-content multiple-platforms consistent-schedule schedule-posts'
+        'ai-content audience-growth grow-followers grow-followers';
+    }
+}
