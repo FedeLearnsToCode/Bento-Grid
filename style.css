@@ -328,7 +328,7 @@ h2 {
 
 }
   
-.attribution { font-size: var(--fs-s); text-align: center; }
+.attribution { font-size: var(--fs-s); text-align: center; margin-top: 4rem}
 .attribution a { color: var(--link-color); }
 
 /* ============ RESPONSIVE TABLET - General ============ */
